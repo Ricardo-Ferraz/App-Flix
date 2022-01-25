@@ -1,10 +1,10 @@
-import { Movie } from './movie';
+import { Movie } from './Movie';
 export interface User{
   Id: Number,
   Username: string,
   Password: string,
   Role: string,
-  Registration: Date,
+  Registration: string,
   Token?: String,
   UserMovies: Movie[]
 }

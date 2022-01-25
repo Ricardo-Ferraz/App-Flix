@@ -1,0 +1,21 @@
+<div style="display: flex; flex-direction: column;">
+  <form [formGroup]="this.loginForm">
+    <mat-form-field class="form-group">
+      <input type="text" class="form-control" matInput formControlName="username" placeholder="Username" autofocus>
+      <mat-error *ngIf="this.loginForm.get('username')?.hasError('required')">
+        O campo de Username é <strong>Obrigatório</strong>!
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-group">
+      <input type="password" class="form-control" matInput placeholder="Password" formControlName="password">
+      <mat-error *ngIf="this.loginForm.get('password')?.hasError('required')">
+        O campo de Password é <strong>Obrigatório</strong>!
+      </mat-error>
+      <mat-error *ngIf="this.loginForm.get('password')?.hasError('minlength')">
+        O campo de Password precisa ter 3 caracteres!
+      </mat-error>
+    </mat-form-field>
+    <button type="submit" class="form-group" (click)="login()">Entrar</button>
+  </form>
+</div>
