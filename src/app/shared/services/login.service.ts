@@ -1,5 +1,5 @@
-import { LoginUserViewModel } from './../models/LoginUserViewModel';
-import { environment } from './../../environments/environment';
+import { LoginUserViewModel } from '../../models/LoginUserViewModel';
+import { environment } from '../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { take } from 'rxjs';
