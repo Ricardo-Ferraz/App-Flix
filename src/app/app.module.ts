@@ -12,13 +12,15 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { MaterialModule } from './material/material/material.module';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
