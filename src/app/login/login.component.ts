@@ -57,6 +57,7 @@ export class LoginComponent implements OnInit {
           this.user.Token= response.token;
           this.user.Registration= response.registration;
           this.localStorage.setUser(this.user);
+
         },
         error: error => {
           console.log(error)
@@ -69,8 +70,5 @@ export class LoginComponent implements OnInit {
 
   }
 
-}
-function next(next: any, arg1: (response: any) => void) {
-  throw new Error('Function not implemented.');
 }
 

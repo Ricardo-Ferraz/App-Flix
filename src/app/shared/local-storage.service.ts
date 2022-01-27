@@ -9,6 +9,10 @@ export class LocalStorageService {
 
   constructor() { }
 
+  disableUser(){
+    window.localStorage.clear();
+  }
+
   setUser(user: User){
     if(user){
       window.localStorage.setItem('user', JSON.stringify(user))

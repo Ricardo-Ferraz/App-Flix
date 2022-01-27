@@ -9,5 +9,6 @@ export interface Movie{
   Description: string,
   Cast: string,
   Duration: string,
+  UrlImage: string,
   MovieCategories: Category[]
 }
