@@ -1,3 +1,4 @@
+import { HeaderComponent } from './../header/header.component';
 import { User } from './../models/Usuario';
 import { LoginUserViewModel } from './../models/LoginUserViewModel';
 import { LoginService } from '../shared/services/login.service';
@@ -38,7 +39,8 @@ export class LoginComponent implements OnInit {
     private loginService: LoginService,
     private router: Router,
     private toast: ToastService,
-    private spinner: LoadingService) {
+    private spinner: LoadingService,
+    private header: HeaderComponent) {
     this.loginForm= this.formBuilder.group({
       username:['', [Validators.required]],
       password:['', [Validators.required, Validators.minLength(3)]]
@@ -70,6 +72,7 @@ export class LoginComponent implements OnInit {
         complete: () => {
           this.spinner.hide();
           this.toast.showSuccess("Login completo!")
+          this.header.navbar();
           this.router.navigate([''])
         }
       });

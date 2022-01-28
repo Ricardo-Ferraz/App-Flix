@@ -1,8 +1,11 @@
 import { Router } from '@angular/router';
 import { User } from './../models/Usuario';
 import { LocalStorageService } from './../shared/services/local-storage.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 
+@Injectable({
+  providedIn: 'root'
+})
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -19,12 +22,15 @@ export class HeaderComponent implements OnInit {
     private router: Router) {
 }
   ngOnInit(): void {
-    this.user= this.localStorageService.getUser();
-    console.log("init")
-    this.navbar();
+
+  }
+
+  ngAfterContentChecked(){
+    this.navbar()
   }
 
   navbar(){
+    this.user= this.localStorageService.getUser();
     this.itens= [];
     if(this.user?.Role === 'Usuario' || this.user?.Role === 'Editor'){
       this.itens.push('filmes');
@@ -39,7 +45,8 @@ export class HeaderComponent implements OnInit {
 
   logOut(){
     this.localStorageService.disableUser();
-    this.user= undefined;
+    this.user= this.localStorageService.getUser();
+    this.navbar();
 
     this.router.navigate(['', 'login'])
   }
