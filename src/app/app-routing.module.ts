@@ -9,6 +9,9 @@ import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   {path: "cadastro", component: RegisterComponent},
   {path: "login", component: LoginComponent},
+  {path: "filmes", component: LoginComponent},
+  {path: "lista", component: LoginComponent},
+  {path: "usuarios", component: LoginComponent},
   {path: '', component: HomeComponent, canActivate: [LoginGuard]}
 ];
 
