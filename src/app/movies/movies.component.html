@@ -1,0 +1,18 @@
+<div class="conteiner">
+  <h1>Filmes</h1>
+  <div *ngIf="this.movies | async as movieAsync;">
+   <div *ngFor="let elemento of movieAsync">
+      <img [src]="this.elemento.urlImagem" width="300px" >
+      <p> {{ this.elemento.title }} </p>
+   </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+
+<ngx-spinner color="#e50914">
+  <!--  <img src='https://stcotvfoco.com.br/2021/06/763dbdddddff187ee69e09ee1671388e.720x720x1.jpg' />-->
+</ngx-spinner>
+
+
+
+

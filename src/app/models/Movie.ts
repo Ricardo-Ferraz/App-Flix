@@ -1,14 +1,14 @@
 import { Category } from "./Category";
 
 export interface Movie{
-  Id: number,
-  Title: string,
-  Director: string,
-  Age: number,
-  Rating: number,
-  Description: string,
-  Cast: string,
-  Duration: string,
-  UrlImage: string,
-  MovieCategories: Category[]
+  id: number,
+  title: string,
+  director: string,
+  age: number,
+  rating: number,
+  description: string,
+  cast: string,
+  duration: string,
+  urlImagem: string,
+  movieCategories: Category[]
 }

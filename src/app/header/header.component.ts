@@ -1,3 +1,4 @@
+import { LoadingService } from './../shared/services/loading.service';
 import { Router } from '@angular/router';
 import { User } from './../models/Usuario';
 import { LocalStorageService } from './../shared/services/local-storage.service';
@@ -19,7 +20,8 @@ export class HeaderComponent implements OnInit {
 
 
   constructor(private localStorageService: LocalStorageService,
-    private router: Router) {
+    private router: Router,
+    private spinner: LoadingService) {
 }
   ngOnInit(): void {
 
@@ -44,11 +46,13 @@ export class HeaderComponent implements OnInit {
   }
 
   logOut(){
+    this.spinner.show()
     this.localStorageService.disableUser();
     this.user= this.localStorageService.getUser();
     this.navbar();
 
     this.router.navigate(['', 'login'])
+    this.spinner.hide()
   }
 
 }
