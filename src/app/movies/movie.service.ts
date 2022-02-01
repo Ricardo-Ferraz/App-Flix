@@ -15,8 +15,6 @@ export class MovieService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<any[]>{
-    return this.http.get<Movie[]>(this.getAllUrl).pipe(
-      tap(console.log)
-    );
+    return this.http.get<Movie[]>(this.getAllUrl).pipe();
   }
 }

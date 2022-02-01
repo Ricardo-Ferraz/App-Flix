@@ -6,5 +6,6 @@ export interface User{
   Role: string,
   Registration: string,
   Token?: String,
+  urlImagem: string,
   UserMovies: Movie[]
 }

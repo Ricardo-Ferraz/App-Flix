@@ -1,9 +1,9 @@
-<mat-toolbar *ngIf="this.user">
+<mat-toolbar *ngIf="this.user" style="z-index: 9999;">
   <span [routerLink]="['','']" class="pointer" [routerLink]="['']">{{ this.title }}</span>
   <span class="field pointer" *ngFor="let element of this.itens" [routerLink]="['', element]">{{ element | titlecase }}</span>
   <span class="field pointer" (click)="this.logOut()">Sair</span>
   <div class="hello pointer">
     <span>Olá, {{ this.user?.Username }}</span>
-    <img src="">
+    <img src="#">
   </div>
 </mat-toolbar>

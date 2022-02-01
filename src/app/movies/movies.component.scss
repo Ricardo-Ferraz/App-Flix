@@ -1,3 +1,51 @@
 .conteiner{
   padding: 45px;
 }
+
+.pagination{
+  padding: 45px;
+  margin-left: 30px;
+}
+
+.display{
+  display: flex;
+  flex-wrap: wrap;
+
+  img{
+    width: 250px;
+    height: 250px;
+    margin-left: 30px;
+    margin-top: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+}
+
+
+.custom-pagination .page-number{
+  display: inline-block;
+  background-color: red !important;
+  margin: 0px 4px;
+  border-radius: 25px;
+}
+
+.page-number.current{
+  background: #ffffff!important;
+  border: 2px solid #FFF;
+}
+
+.page-number span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.pagination-previous,.pagination-next{
+  display: inline-block;
+  font-weight: bold;
+}

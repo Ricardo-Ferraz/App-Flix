@@ -2,7 +2,8 @@ import { LoadingService } from './../shared/services/loading.service';
 import { Movie } from './../models/Movie';
 import { MovieService } from './movie.service';
 import { Component, OnInit } from '@angular/core';
-import {  Observable, catchError, of } from 'rxjs';
+import { Observable, catchError, of } from 'rxjs';
+
 
 @Component({
   selector: 'app-movies',
@@ -12,6 +13,8 @@ import {  Observable, catchError, of } from 'rxjs';
 export class MoviesComponent implements OnInit {
 
   movies: Observable<Movie[]>;
+  moviesPerPage: number= 24;
+  page: number= 1;
 
   constructor(private movieService: MovieService,
     private spinner: LoadingService) {
@@ -19,19 +22,21 @@ export class MoviesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.spinner.show();
     this.onRefresh();
-    console.log(this.movies)
     this.spinner.hide();
   }
 
   onRefresh(){
-   this.movies= this.movieService.getAll().pipe(
-     catchError((error: any) => {
-       console.log(error);
-       return of();
-     })
-   );
-  }
+    this.spinner.show();
+    this.movies= this.movieService.getAll().pipe(
+       catchError((error: any) => {
+         console.log(error);
+         this.spinner.hide();
+        return of();
+      })
+    );
+    }
 
 }
+
+

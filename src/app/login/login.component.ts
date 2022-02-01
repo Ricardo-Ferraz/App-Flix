@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
     Password: '',
     Role: '',
     Registration: '',
+    urlImagem: '',
     UserMovies: []
   }
 
@@ -63,6 +64,7 @@ export class LoginComponent implements OnInit {
           this.user.UserMovies= response.userMovies;
           this.user.Token= response.token;
           this.user.Registration= response.registration;
+          this.user.urlImagem= response.urlImagem;
           this.localStorage.setUser(this.user);
         },
         error: error => {

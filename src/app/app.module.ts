@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 import { MaterialModule } from './material/material/material.module';
@@ -37,7 +38,8 @@ import { MovieDetailsComponent } from './movies/movie-details/movie-details.comp
     HttpClientModule,
     ToastrModule.forRoot(),
     NgxSpinnerModule,
-    MaterialModule
+    MaterialModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
