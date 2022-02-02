@@ -10,11 +10,16 @@ import { environment } from 'src/environments/environment';
 export class MovieService {
 
   private readonly prefix: string= `${environment.apiUrl}Movies/`;
-  private getAllUrl: string= `${this.prefix}GetAll`
+  private getAllUrl: string= `${this.prefix}GetAll`;
+  private getByIdUrl: string= `${this.prefix}GetById/`;
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<any[]>{
+  getAll(): Observable<Movie[]>{
     return this.http.get<Movie[]>(this.getAllUrl).pipe();
+  }
+
+  getById(id: number): Observable<Movie>{
+    return this.http.get<Movie>(`${this.getByIdUrl}${id}`).pipe();
   }
 }

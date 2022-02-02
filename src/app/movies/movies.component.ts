@@ -30,13 +30,15 @@ export class MoviesComponent implements OnInit {
     this.spinner.show();
     this.movies= this.movieService.getAll().pipe(
        catchError((error: any) => {
-         console.log(error);
          this.spinner.hide();
-        return of();
-      })
-    );
+         console.log(error);
+         return of();
+      }),
+      );
     }
-
+    passar(){
+      console.log("passou")
+    }
 }
 
 

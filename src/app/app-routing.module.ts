@@ -1,3 +1,6 @@
+import { AdmGuard } from './guards/adm.guard';
+import { MyListComponent } from './my-list/my-list.component';
+import { UsersComponent } from './users/users.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -14,8 +17,8 @@ const routes: Routes = [
   {path: "filmes", component: MoviesComponent, canActivate: [LoginGuard], children: [
     {path: ":id", component: MovieDetailsComponent}
   ]},
-  {path: "lista", component: LoginComponent},
-  {path: "usuarios", component: LoginComponent},
+  {path: "lista", component: MyListComponent, canActivate: [LoginGuard]},
+  {path: "usuarios", component: UsersComponent, canActivate: [LoginGuard, AdmGuard]},
   {path: '', component: HomeComponent, canActivate: [LoginGuard]}
 ];
 

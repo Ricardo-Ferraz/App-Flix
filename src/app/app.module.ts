@@ -18,6 +18,9 @@ import { RegisterComponent } from './register/register.component';
 import { HeaderComponent } from './header/header.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
+import { UsersComponent } from './users/users.component';
+import { MyListComponent } from './my-list/my-list.component';
+import { MovieModalComponent } from './movies/movie-details/modal/movie-modal/movie-modal.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { MovieDetailsComponent } from './movies/movie-details/movie-details.comp
     RegisterComponent,
     HeaderComponent,
     MoviesComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    UsersComponent,
+    MyListComponent,
+    MovieModalComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +46,9 @@ import { MovieDetailsComponent } from './movies/movie-details/movie-details.comp
     NgxSpinnerModule,
     MaterialModule,
     NgxPaginationModule
+  ],
+  entryComponents: [
+    MovieModalComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
