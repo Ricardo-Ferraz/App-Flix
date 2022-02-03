@@ -1,10 +1,8 @@
-import { MovieService } from './../../../movie.service';
-import { MovieAux } from './../../../../models/MovieAux';
+import { LocalStorageService } from './../../../../shared/services/local-storage.service';
 import { Movie } from './../../../../models/Movie';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-modal',
@@ -29,10 +27,9 @@ export class MovieModalComponent implements OnInit {
   constructor(private dialogRef: MatDialogRef<MovieModalComponent>,
     @Inject(MAT_DIALOG_DATA) private data: any,
     private router: Router,
-    private route: ActivatedRoute,
-    private movieService: MovieService
+    private localStorageService: LocalStorageService
     ) {
-      console.log(this.data)
+      this.movie= this.data;
     }
 
   onNoClick(): void {
@@ -46,6 +43,10 @@ export class MovieModalComponent implements OnInit {
 
   click(){
     console.log(this.data);
+  }
+
+  getUser(){
+    return this.localStorageService.getUser();
   }
 
 }

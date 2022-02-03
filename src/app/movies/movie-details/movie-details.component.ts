@@ -46,10 +46,10 @@ export class MovieDetailsComponent implements OnInit, OnDestroy{
         next: (response) => {
          this.movie= response;
          const dialogRef = this.dialog.open(MovieModalComponent, {
-          width: '250px',
+
           data: response
         });
-        dialogRef.afterClosed().subscribe(result => {});
+          dialogRef.afterClosed().subscribe(result => {});
         },
         error: () => {
           this.toastr.showError("Erro ao mostrar filme selecionado!")

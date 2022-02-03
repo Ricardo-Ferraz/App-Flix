@@ -1,0 +1,34 @@
+.end{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.edit{
+  border: 0;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 24px 0 12px;
+  background: #e50914;
+  color: #FFF;
+  min-width: 98px;
+  min-height: 37px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+::ng-deep.mat-dialog-container{
+  color: #FFF !important;
+  background-color: rgba(0,0,0,.75) !important;
+}
