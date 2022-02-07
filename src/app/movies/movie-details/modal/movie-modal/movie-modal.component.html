@@ -1,11 +1,11 @@
-<div style="overflow-y: scroll;">
+<div>
   <a (click)="onNoClick()" class="end pointer"><mat-icon>close</mat-icon></a>
 
   <div class="modal-image" class="center">
     <img [src]="this.movie.urlImagem" width="50%"  style="border-radius: 4px;">
   </div>
 
-  <div class="modal-container">
+  <div class="modal-container" style="margin-top: 50px;">
     <div class="modal-details" style="display: flex;">
       <div class="description-rating-agr" style="width: 50%;">
         <div class="rating-agr" style="display: block;">
@@ -18,10 +18,10 @@
       </div>
       <div class="cast-categories" style="width: 50%;">
         <div class="cast end">
-          <p>{{ this.movie.cast }}</p>
+          <p> Elenco: {{ this.movie.cast }}</p>
         </div>
         <div class="categories end">
-
+            Categorias: {{ this.movie.movieCategories }}
         </div>
       </div>
     </div>

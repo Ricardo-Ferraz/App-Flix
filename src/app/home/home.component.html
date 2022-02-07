@@ -1,1 +1,13 @@
-<p>home works!</p>
+
+<div class="row">
+  <owl-carousel-o [options]="this.customOptions" *ngIf="this.movies | async as movieAsync;">
+
+    <ng-container>
+      <ng-template *ngFor="let movie of movieAsync" carouselSlide [id]="movie.id.toString()">
+        <img *ngIf="movie.rating === 1" [src]="movie.urlImagem" alt="imagem" [title]="movie.title">
+      </ng-template>
+    </ng-container>
+
+  </owl-carousel-o>
+</div>
+

@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 import { MaterialModule } from './material/material/material.module';
@@ -45,7 +46,8 @@ import { MovieModalComponent } from './movies/movie-details/modal/movie-modal/mo
     ToastrModule.forRoot(),
     NgxSpinnerModule,
     MaterialModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    CarouselModule
   ],
   entryComponents: [
     MovieModalComponent

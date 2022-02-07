@@ -36,9 +36,6 @@ export class MoviesComponent implements OnInit {
       }),
       );
     }
-    passar(){
-      console.log("passou")
-    }
 }
 
 
